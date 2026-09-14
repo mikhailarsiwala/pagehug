@@ -198,7 +198,7 @@ function Checkout() {
             <span>{rupees(total)}</span>
           </div>
           <button type="submit" className="btn-primary w-full">
-            Pay {rupees(total)}
+            {orderFormConfigured() ? "Place order" : `Pay ${rupees(total)}`}
           </button>
         </aside>
       </form>
