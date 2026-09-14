@@ -1,8 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CheckCircle2 } from "lucide-react";
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import { rupees } from "@/lib/products";
 import { useStore } from "@/lib/store";
+import {
+  buildOrderFormUrl,
+  orderFormConfigured,
+} from "@/lib/orderForm";
 
 export const Route = createFileRoute("/checkout")({
   head: () => ({
