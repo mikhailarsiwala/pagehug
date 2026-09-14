@@ -122,11 +122,7 @@ function Checkout() {
       <h1 className="text-4xl sm:text-5xl">Checkout</h1>
       <form
         className="mt-10 grid gap-10 lg:grid-cols-[1.5fr_1fr]"
-        onSubmit={(e) => {
-          e.preventDefault();
-          clear();
-          setPlaced(true);
-        }}
+        onSubmit={placeOrder}
       >
         <div className="space-y-8">
           <section className="space-y-4">
@@ -166,7 +162,9 @@ function Checkout() {
               ))}
             </div>
             <p className="text-xs text-muted-foreground">
-              This is a demo checkout — no real payment is taken yet.
+              {orderFormConfigured()
+                ? "Placing your order opens a short form to confirm delivery — payment is arranged after you submit it."
+                : "This is a demo checkout — no real payment is taken yet."}
             </p>
           </section>
         </div>
