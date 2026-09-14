@@ -25,15 +25,15 @@ export function orderFormConfigured() {
 }
 
 type OrderValues = {
-  name?: string;
-  email?: string;
-  phone?: string;
-  address?: string;
-  city?: string;
-  state?: string;
-  pincode?: string;
-  payment?: string;
-  orderDetails?: string;
+  name?: string | undefined;
+  email?: string | undefined;
+  phone?: string | undefined;
+  address?: string | undefined;
+  city?: string | undefined;
+  state?: string | undefined;
+  pincode?: string | undefined;
+  payment?: string | undefined;
+  orderDetails?: string | undefined;
 };
 
 export function buildOrderFormUrl(values: OrderValues): string | null {

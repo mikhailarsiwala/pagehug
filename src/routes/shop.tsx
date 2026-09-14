@@ -2,7 +2,7 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { ProductCard } from "@/components/ProductCard";
 import { CATEGORIES, products } from "@/lib/products";
 
-type ShopSearch = { q?: string; category?: string };
+type ShopSearch = { q?: string | undefined; category?: string | undefined };
 
 export const Route = createFileRoute("/shop")({
   validateSearch: (search: Record<string, unknown>): ShopSearch => ({
