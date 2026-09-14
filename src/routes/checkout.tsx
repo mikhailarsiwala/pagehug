@@ -33,7 +33,7 @@ const FIELDS = [
 ] as const;
 
 function orderDetailsText(
-  items: { name: string; variant?: string; price: number; qty: number }[],
+  items: { name: string; variant?: string | undefined; price: number; qty: number }[],
   subtotal: number,
   shipping: number,
   total: number,
