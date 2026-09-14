@@ -12,7 +12,7 @@ export type CartItem = {
   name: string;
   price: number;
   image: string;
-  variant?: string;
+  variant?: string | undefined;
   qty: number;
 };
 
@@ -34,7 +34,7 @@ type StoreValue = {
 
 const StoreContext = createContext<StoreValue | null>(null);
 
-const keyOf = (i: { id: string; variant?: string }) => `${i.id}__${i.variant ?? ""}`;
+const keyOf = (i: { id: string; variant?: string | undefined }) => `${i.id}__${i.variant ?? ""}`;
 
 function usePersisted<T>(key: string, initial: T) {
   const [value, setValue] = useState<T>(initial);

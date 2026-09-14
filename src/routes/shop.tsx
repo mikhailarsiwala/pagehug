@@ -2,13 +2,15 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { ProductCard } from "@/components/ProductCard";
 import { CATEGORIES, products } from "@/lib/products";
 
-type ShopSearch = { q?: string; category?: string };
+type ShopSearch = { q?: string | undefined; category?: string | undefined };
 
 export const Route = createFileRoute("/shop")({
   validateSearch: (search: Record<string, unknown>): ShopSearch => ({
-    q: typeof search.q === "string" && search.q ? search.q : undefined,
+    q: typeof search["q"] === "string" && search["q"] ? search["q"] : undefined,
     category:
-      typeof search.category === "string" && search.category ? search.category : undefined,
+      typeof search["category"] === "string" && search["category"]
+        ? search["category"]
+        : undefined,
   }),
   head: () => ({
     meta: [
@@ -58,7 +60,12 @@ function Shop() {
               type="button"
               onClick={() =>
                 navigate({
-                  search: (prev) => ({ ...prev, category: c === "All" ? undefined : c }),
+                  search: (prev) => {
+                    const next = { ...prev };
+                    if (c === "All") delete next.category;
+                    else next.category = c;
+                    return next;
+                  },
                 })
               }
               className={`shrink-0 rounded-full border px-4 py-2 text-sm transition-colors ${
@@ -74,7 +81,14 @@ function Shop() {
         <input
           value={q ?? ""}
           onChange={(e) =>
-            navigate({ search: (prev) => ({ ...prev, q: e.target.value || undefined }) })
+            navigate({
+              search: (prev) => {
+                const next = { ...prev };
+                if (e.target.value) next.q = e.target.value;
+                else delete next.q;
+                return next;
+              },
+            })
           }
           placeholder="Search designs…"
           className="w-full rounded-full border border-border bg-card px-5 py-2.5 text-sm outline-none placeholder:text-muted-foreground focus:border-primary sm:w-64"

@@ -1,8 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CheckCircle2 } from "lucide-react";
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import { rupees } from "@/lib/products";
 import { useStore } from "@/lib/store";
+import {
+  buildOrderFormUrl,
+  orderFormConfigured,
+} from "@/lib/orderForm";
 
 export const Route = createFileRoute("/checkout")({
   head: () => ({
@@ -28,22 +32,75 @@ const FIELDS = [
   { name: "pincode", label: "Pincode", type: "text", span: 1 },
 ] as const;
 
+function orderDetailsText(
+  items: { name: string; variant?: string | undefined; price: number; qty: number }[],
+  subtotal: number,
+  shipping: number,
+  total: number,
+) {
+  const lines = items.map(
+    (i) =>
+      `${i.qty} × ${i.name}${i.variant ? ` — ${i.variant}` : ""} (${rupees(i.price * i.qty)})`,
+  );
+  lines.push(`Subtotal: ${rupees(subtotal)}`);
+  lines.push(`Shipping: ${shipping === 0 ? "Free" : rupees(shipping)}`);
+  lines.push(`Total: ${rupees(total)}`);
+  return lines.join("\n");
+}
+
 function Checkout() {
   const { items, subtotal, shipping, total, clear } = useStore();
   const [payment, setPayment] = useState(PAYMENTS[0]);
-  const [placed, setPlaced] = useState(false);
+  const [placed, setPlaced] = useState<string | null>(null);
+
+  const placeOrder = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const get = (key: string) => String(data.get(key) ?? "");
+    const formUrl = buildOrderFormUrl({
+      name: get("name"),
+      email: get("email"),
+      phone: get("phone"),
+      address: get("address"),
+      city: get("city"),
+      state: get("state"),
+      pincode: get("pincode"),
+      payment,
+      orderDetails: orderDetailsText(items, subtotal, shipping, total),
+    });
+    clear();
+    setPlaced(formUrl ?? "demo");
+  };
 
   if (placed) {
+    const usingForm = placed !== "demo";
     return (
       <div className="mx-auto max-w-xl px-5 py-24 text-center">
         <CheckCircle2 size={40} className="mx-auto text-sage" />
-        <h1 className="mt-6 text-4xl">Order placed.</h1>
-        <p className="mt-3 text-muted-foreground">
-          Your bookmarks are being packed. We've emailed you the details and tracking will follow.
-        </p>
-        <Link to="/shop" className="btn-primary mt-8">
-          Keep shopping
-        </Link>
+        <h1 className="mt-6 text-4xl">{usingForm ? "One last step." : "Order placed."}</h1>
+        {usingForm ? (
+          <>
+            <p className="mt-3 text-muted-foreground">
+              Your order form just opened in a new tab — submit it there with your delivery
+              details and we'll pack your bookmarks. Didn't open? Use the button below.
+            </p>
+            <div>
+              <a href={placed} target="_blank" rel="noreferrer" className="btn-primary mt-8">
+                Open the order form
+              </a>
+            </div>
+          </>
+        ) : (
+          <p className="mt-3 text-muted-foreground">
+            Your bookmarks are being packed. We've emailed you the details and tracking will
+            follow.
+          </p>
+        )}
+        <div>
+          <Link to="/shop" className="btn-ghost mt-4">
+            Keep shopping
+          </Link>
+        </div>
       </div>
     );
   }
@@ -65,11 +122,7 @@ function Checkout() {
       <h1 className="text-4xl sm:text-5xl">Checkout</h1>
       <form
         className="mt-10 grid gap-10 lg:grid-cols-[1.5fr_1fr]"
-        onSubmit={(e) => {
-          e.preventDefault();
-          clear();
-          setPlaced(true);
-        }}
+        onSubmit={placeOrder}
       >
         <div className="space-y-8">
           <section className="space-y-4">
@@ -109,7 +162,9 @@ function Checkout() {
               ))}
             </div>
             <p className="text-xs text-muted-foreground">
-              This is a demo checkout — no real payment is taken yet.
+              {orderFormConfigured()
+                ? "Placing your order opens a short form to confirm delivery — payment is arranged after you submit it."
+                : "This is a demo checkout — no real payment is taken yet."}
             </p>
           </section>
         </div>
@@ -143,7 +198,7 @@ function Checkout() {
             <span>{rupees(total)}</span>
           </div>
           <button type="submit" className="btn-primary w-full">
-            Pay {rupees(total)}
+            {orderFormConfigured() ? "Place order" : `Pay ${rupees(total)}`}
           </button>
         </aside>
       </form>
