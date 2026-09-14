@@ -58,7 +58,12 @@ function Shop() {
               type="button"
               onClick={() =>
                 navigate({
-                  search: (prev) => ({ ...prev, category: c === "All" ? undefined : c }),
+                  search: (prev) => {
+                    const next = { ...prev };
+                    if (c === "All") delete next.category;
+                    else next.category = c;
+                    return next;
+                  },
                 })
               }
               className={`shrink-0 rounded-full border px-4 py-2 text-sm transition-colors ${
