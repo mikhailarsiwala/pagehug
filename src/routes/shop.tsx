@@ -74,7 +74,14 @@ function Shop() {
         <input
           value={q ?? ""}
           onChange={(e) =>
-            navigate({ search: (prev) => ({ ...prev, q: e.target.value || undefined }) })
+            navigate({
+              search: (prev) => {
+                const next = { ...prev };
+                if (e.target.value) next.q = e.target.value;
+                else delete next.q;
+                return next;
+              },
+            })
           }
           placeholder="Search designs…"
           className="w-full rounded-full border border-border bg-card px-5 py-2.5 text-sm outline-none placeholder:text-muted-foreground focus:border-primary sm:w-64"
