@@ -57,17 +57,21 @@ function Checkout() {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
     const get = (key: string) => String(data.get(key) ?? "");
+    const fullAddress = [get("address"), get("city"), get("state"), get("pincode")]
+      .filter(Boolean)
+      .join(", ");
     const formUrl = buildOrderFormUrl({
       name: get("name"),
       email: get("email"),
       phone: get("phone"),
-      address: get("address"),
+      address: fullAddress,
       city: get("city"),
       state: get("state"),
       pincode: get("pincode"),
       payment,
-      orderDetails: orderDetailsText(items, subtotal, shipping, total),
+      orderDetails: `${orderDetailsText(items, subtotal, shipping, total)}\nPreferred payment: ${payment}`,
     });
+
     clear();
     setPlaced(formUrl ?? "demo");
   };
