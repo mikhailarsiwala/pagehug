@@ -2,23 +2,25 @@
 // Paste your Google Form link below (the /viewform URL) and the checkout
 // automatically sends customers there with their details pre-filled.
 
-export const ORDER_FORM_URL = "";
+export const ORDER_FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSeqRI0p77TeNlNx1f3ylKE7huKMcOpnmwCTbz5Nm6ds-W5Lbw/viewform";
 
-// Once the form exists, open it, view its HTML (or use "Get pre-filled link"
-// in Google Forms) and copy each field's entry id, e.g. "entry.123456789".
-// Leave any blank and that field simply won't be pre-filled.
+// Field ids read from the live form. Leave any blank and that field simply
+// won't be pre-filled. The form has a single Address box, so city, state and
+// pincode are folded into it.
 export const FORM_ENTRIES = {
-  name: "",
-  email: "",
-  phone: "",
-  address: "",
+  name: "entry.2005620554",
+  email: "entry.1045781291",
+  phone: "entry.1166974658",
+  address: "entry.1065046570",
   city: "",
   state: "",
   pincode: "",
   payment: "",
   // A long-answer field that receives the full list of items ordered.
-  orderDetails: "",
+  orderDetails: "entry.839337160",
 } as const;
+
 
 export function orderFormConfigured() {
   return ORDER_FORM_URL.trim().length > 0;
