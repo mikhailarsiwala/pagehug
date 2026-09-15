@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { X } from "lucide-react";
 import { useState } from "react";
-import { Stars } from "./Stars";
 import { rupees, type Product } from "@/lib/products";
 import { useStore } from "@/lib/store";
 
@@ -30,12 +29,6 @@ export function QuickView({ product, onClose }: { product: Product; onClose: () 
           <div className="space-y-4 p-6 sm:p-8">
             <p className="eyebrow">{product.category}</p>
             <h3 className="text-2xl">{product.name}</h3>
-            <div className="flex items-center gap-2 text-xs text-muted-foreground">
-              <Stars rating={product.rating} />
-              <span>
-                {product.rating} · {product.reviews} reviews
-              </span>
-            </div>
             <p className="text-sm text-muted-foreground">{product.description}</p>
             <p className="text-xl">{rupees(product.price)}</p>
             <div className="flex flex-wrap gap-2">

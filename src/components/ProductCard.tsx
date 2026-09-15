@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Heart, Eye, ShoppingBag } from "lucide-react";
 import { useState } from "react";
-import { Stars } from "./Stars";
 import { QuickView } from "./QuickView";
 import { rupees, type Product } from "@/lib/products";
 import { useStore } from "@/lib/store";
@@ -59,12 +58,6 @@ export function ProductCard({ product }: { product: Product }) {
             <span className="eyebrow shrink-0">{product.category}</span>
           </div>
           <p className="line-clamp-2 text-sm text-muted-foreground">{product.tagline}</p>
-          <div className="flex items-center gap-2 text-xs text-muted-foreground">
-            <Stars rating={product.rating} />
-            <span>
-              {product.rating} ({product.reviews})
-            </span>
-          </div>
           <div className="flex items-center justify-between pt-2">
             <p className="text-base font-medium">
               {rupees(product.price)}{" "}

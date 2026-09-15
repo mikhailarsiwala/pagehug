@@ -3,7 +3,7 @@ import { Heart, Minus, Plus, Truck } from "lucide-react";
 import { useState } from "react";
 import { FoldDiagram } from "@/components/HowItWorks";
 import { ProductCard } from "@/components/ProductCard";
-import { Stars } from "@/components/Stars";
+import { Reviews } from "@/components/Reviews";
 import { getProduct, products, rupees } from "@/lib/products";
 import { useStore } from "@/lib/store";
 
@@ -90,12 +90,6 @@ function ProductPage() {
           <div className="space-y-3">
             <p className="eyebrow">{product.category}</p>
             <h1 className="text-4xl sm:text-5xl">{product.name}</h1>
-            <div className="flex items-center gap-2 text-xs text-muted-foreground">
-              <Stars rating={product.rating} />
-              <span>
-                {product.rating} · {product.reviews} reviews
-              </span>
-            </div>
             <p className="text-2xl">
               {rupees(product.price)}{" "}
               <span className="text-base text-muted-foreground line-through">
@@ -190,7 +184,15 @@ function ProductPage() {
         </div>
       </div>
 
-      <section className="mt-20">
+      <div className="-mx-5 mt-8">
+        <Reviews
+          productId={product.id}
+          eyebrow="Reader reviews"
+          heading={`Readers love ${product.name}`}
+        />
+      </div>
+
+      <section className="mt-8">
         <h2 className="text-3xl">You might also love</h2>
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {related.map((p) => (

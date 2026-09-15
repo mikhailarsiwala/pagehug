@@ -6,7 +6,7 @@ import life2 from "@/assets/life-2.jpg";
 import life3 from "@/assets/life-3.jpg";
 import life4 from "@/assets/life-4.jpg";
 import { ProductCard } from "@/components/ProductCard";
-import { Stars } from "@/components/Stars";
+import { Reviews } from "@/components/Reviews";
 import { BundleGrid } from "@/components/BundleGrid";
 import { HowItWorks } from "@/components/HowItWorks";
 import { products } from "@/lib/products";
@@ -53,34 +53,6 @@ const BENEFITS = [
   },
 ];
 
-const REVIEWS = [
-  {
-    name: "Ananya R.",
-    city: "Bengaluru",
-    text: "Survived a 6-hour bus ride at the bottom of my bag. Page still marked. Obsessed.",
-  },
-  {
-    name: "Kabir M.",
-    city: "Delhi",
-    text: "Bought the Reader's Pack as Rakhi gifts. Everyone asked where I got them.",
-  },
-  {
-    name: "Meher S.",
-    city: "Pune",
-    text: "The Final Cut design is genuinely beautiful. Feels way more premium than ₹80.",
-  },
-  {
-    name: "Rohit T.",
-    city: "Mumbai",
-    text: "I used to fold corners. My books have forgiven me.",
-  },
-  {
-    name: "Sneha K.",
-    city: "Kochi",
-    text: "Magnets are strong without being chunky. Perfect for thin paperbacks.",
-  },
-];
-
 const GALLERY = [life1, life2, life3, life4];
 
 function Home() {
@@ -116,12 +88,6 @@ function Home() {
             height={1104}
             className="w-full rounded-4xl object-cover shadow-[var(--shadow-lift)]"
           />
-          <div className="absolute -bottom-5 left-5 rounded-3xl bg-card px-5 py-3 shadow-[var(--shadow-soft)] sm:left-8">
-            <div className="flex items-center gap-2">
-              <Stars rating={5} />
-              <span className="text-xs text-muted-foreground">4.9 · 1,200+ readers</span>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -184,27 +150,7 @@ function Home() {
 
       <HowItWorks />
 
-      {/* Reviews */}
-      <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
-        <div className="max-w-xl space-y-3">
-          <p className="eyebrow">Social proof</p>
-          <h2 className="text-4xl sm:text-5xl">Readers Are Obsessed.</h2>
-        </div>
-        <div className="no-scrollbar mt-10 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4">
-          {REVIEWS.map((r) => (
-            <figure
-              key={r.name}
-              className="card-soft w-[min(85vw,22rem)] shrink-0 snap-start space-y-4 p-6"
-            >
-              <Stars rating={5} />
-              <blockquote className="text-sm leading-relaxed text-foreground">“{r.text}”</blockquote>
-              <figcaption className="text-xs text-muted-foreground">
-                {r.name} · {r.city}
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-      </section>
+      <Reviews />
 
       {/* Social */}
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
