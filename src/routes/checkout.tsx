@@ -72,9 +72,11 @@ function Checkout() {
       orderDetails: `${orderDetailsText(items, subtotal, shipping, total)}\nPreferred payment: ${payment}`,
     });
 
+    if (formUrl) window.open(formUrl, "_blank", "noopener");
     clear();
     setPlaced(formUrl ?? "demo");
   };
+
 
   if (placed) {
     const usingForm = placed !== "demo";
