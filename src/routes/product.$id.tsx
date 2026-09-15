@@ -3,7 +3,6 @@ import { Heart, Minus, Plus, Truck } from "lucide-react";
 import { useState } from "react";
 import { FoldDiagram } from "@/components/HowItWorks";
 import { ProductCard } from "@/components/ProductCard";
-import { Stars } from "@/components/Stars";
 import { getProduct, products, rupees } from "@/lib/products";
 import { useStore } from "@/lib/store";
 
@@ -90,12 +89,6 @@ function ProductPage() {
           <div className="space-y-3">
             <p className="eyebrow">{product.category}</p>
             <h1 className="text-4xl sm:text-5xl">{product.name}</h1>
-            <div className="flex items-center gap-2 text-xs text-muted-foreground">
-              <Stars rating={product.rating} />
-              <span>
-                {product.rating} · {product.reviews} reviews
-              </span>
-            </div>
             <p className="text-2xl">
               {rupees(product.price)}{" "}
               <span className="text-base text-muted-foreground line-through">
