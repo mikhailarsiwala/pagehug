@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { X } from "lucide-react";
 import { useState } from "react";
-import { Stars } from "./Stars";
 import { rupees, type Product } from "@/lib/products";
 import { useStore } from "@/lib/store";
 
