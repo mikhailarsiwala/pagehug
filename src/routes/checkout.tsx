@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { CheckCircle2 } from "lucide-react";
+import { Check, CheckCircle2 } from "lucide-react";
 import { useState, type FormEvent } from "react";
 import { rupees } from "@/lib/products";
 import { useStore } from "@/lib/store";
@@ -12,9 +12,9 @@ export const Route = createFileRoute("/checkout")({
   head: () => ({
     meta: [
       { title: "Checkout — Pagehug" },
-      { name: "description", content: "Secure checkout with UPI, cards, net banking and wallets." },
+      { name: "description", content: "Send a Pagehug order request with your delivery and payment preference." },
       { property: "og:title", content: "Checkout — Pagehug" },
-      { property: "og:description", content: "UPI, cards, net banking and wallets supported." },
+      { property: "og:description", content: "Review your order and send your delivery details." },
     ],
   }),
   component: Checkout,
@@ -87,8 +87,8 @@ function Checkout() {
         {usingForm ? (
           <>
             <p className="mt-3 text-muted-foreground">
-              Your order form just opened in a new tab — submit it there with your delivery
-              details and we'll pack your bookmarks. Didn't open? Use the button below.
+              Your details and order summary are ready in the Google Form. Submit that form to
+              send your order request. If it did not open, use the button below.
             </p>
             <div>
               <a href={placed} target="_blank" rel="noreferrer" className="btn-primary mt-8">
@@ -97,10 +97,7 @@ function Checkout() {
             </div>
           </>
         ) : (
-          <p className="mt-3 text-muted-foreground">
-            Your bookmarks are being packed. We've emailed you the details and tracking will
-            follow.
-          </p>
+          <p className="mt-3 text-muted-foreground">Your order request has been recorded.</p>
         )}
         <div>
           <Link to="/shop" className="btn-ghost mt-4">
@@ -126,6 +123,22 @@ function Checkout() {
   return (
     <div className="mx-auto max-w-5xl px-5 py-12 lg:py-16">
       <h1 className="text-4xl sm:text-5xl">Checkout</h1>
+      <ol aria-label="Checkout progress" className="mt-6 flex items-center gap-2 text-xs sm:text-sm">
+        <li className="flex items-center gap-2 text-sage">
+          <span className="grid h-7 w-7 place-items-center rounded-full bg-sand"><Check size={14} /></span>
+          Bag
+        </li>
+        <li aria-hidden="true" className="h-px flex-1 bg-border" />
+        <li className="flex items-center gap-2 font-medium text-foreground">
+          <span className="grid h-7 w-7 place-items-center rounded-full bg-primary text-primary-foreground">2</span>
+          Details
+        </li>
+        <li aria-hidden="true" className="h-px flex-1 bg-border" />
+        <li className="flex items-center gap-2 text-muted-foreground">
+          <span className="grid h-7 w-7 place-items-center rounded-full border border-border">3</span>
+          Confirm
+        </li>
+      </ol>
       <form
         className="mt-10 grid gap-10 lg:grid-cols-[1.5fr_1fr]"
         onSubmit={placeOrder}
@@ -152,7 +165,7 @@ function Checkout() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl">Payment method</h2>
+            <h2 className="text-xl">Payment preference</h2>
             <div className="grid gap-3 sm:grid-cols-2">
               {PAYMENTS.map((p) => (
                 <button
@@ -169,7 +182,7 @@ function Checkout() {
             </div>
             <p className="text-xs text-muted-foreground">
               {orderFormConfigured()
-                ? "Placing your order opens a short form to confirm delivery — payment is arranged after you submit it."
+                ? "No payment is taken on this page. Continue to the Google Form to send the order; payment is arranged after confirmation."
                 : "This is a demo checkout — no real payment is taken yet."}
             </p>
           </section>
@@ -204,7 +217,7 @@ function Checkout() {
             <span>{rupees(total)}</span>
           </div>
           <button type="submit" className="btn-primary w-full">
-            {orderFormConfigured() ? "Place order" : `Pay ${rupees(total)}`}
+            {orderFormConfigured() ? "Continue to order form" : `Pay ${rupees(total)}`}
           </button>
         </aside>
       </form>
