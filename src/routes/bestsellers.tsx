@@ -8,10 +8,10 @@ export const Route = createFileRoute("/bestsellers")({
       { title: "Bestselling Magnetic Bookmarks — Pagehug" },
       {
         name: "description",
-        content: "The Pagehug designs readers keep coming back for, starting at ₹60.",
+        content: "A featured collection of Pagehug magnetic bookmark designs, starting at ₹60.",
       },
       { property: "og:title", content: "Bestsellers — Pagehug" },
-      { property: "og:description", content: "The designs readers keep coming back for." },
+      { property: "og:description", content: "A featured collection of magnetic bookmark designs." },
     ],
   }),
   component: Bestsellers,
@@ -22,10 +22,10 @@ function Bestsellers() {
   return (
     <div className="mx-auto max-w-7xl px-5 py-12 lg:px-8 lg:py-16">
       <div className="max-w-xl space-y-3">
-        <p className="eyebrow">Crowd favourites</p>
-        <h1 className="text-4xl sm:text-5xl">The ones that sell out.</h1>
+        <p className="eyebrow">Bestsellers</p>
+        <h1 className="text-4xl sm:text-5xl">Featured favourites.</h1>
         <p className="text-muted-foreground">
-          Voted for with wallets by a few thousand very serious readers.
+          A handpicked set of Pagehug designs, ready for your next chapter.
         </p>
       </div>
       <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

@@ -8,19 +8,11 @@ export function BundleGrid() {
     <div className="grid gap-6 lg:grid-cols-3">
       {bundles.map((b) => {
         const save = b.mrp - b.price;
-        const popular = b.count === 3;
         return (
           <div
             key={b.id}
-            className={`card-soft relative flex flex-col overflow-hidden transition-transform duration-500 hover:-translate-y-1.5 ${
-              popular ? "ring-1 ring-primary" : ""
-            }`}
+            className="card-soft relative flex flex-col overflow-hidden transition-transform duration-500 hover:-translate-y-1.5"
           >
-            {popular && (
-              <span className="absolute right-5 top-5 z-10 rounded-full bg-primary px-3 py-1 text-[0.65rem] uppercase tracking-[0.16em] text-primary-foreground">
-                Most loved
-              </span>
-            )}
             <img
               src={bundleImage}
               alt={`${b.name} of magnetic bookmarks`}

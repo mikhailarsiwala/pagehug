@@ -4,9 +4,9 @@ export const Route = createFileRoute("/account")({
   head: () => ({
     meta: [
       { title: "Account — Pagehug" },
-      { name: "description", content: "Sign in to track your Pagehug orders and saved designs." },
+      { name: "description", content: "Your saved Pagehug bag and wishlist information." },
       { property: "og:title", content: "Account — Pagehug" },
-      { property: "og:description", content: "Track orders and saved designs." },
+      { property: "og:description", content: "Your saved bag and wishlist information." },
     ],
   }),
   component: Account,

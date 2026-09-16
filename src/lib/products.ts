@@ -15,8 +15,6 @@ export type Product = {
   description: string;
   price: number;
   mrp: number;
-  rating: number;
-  reviews: number;
   category: string;
   bestseller?: boolean;
   designs: string[];
@@ -43,8 +41,6 @@ export const products: Product[] = [
       "A daily nudge clipped to your page. Warm terracotta, quiet typography, and magnets that mean it.",
     price: 60,
     mrp: 80,
-    rating: 4.9,
-    reviews: 214,
     category: "Motivational",
     bestseller: true,
     designs: ["Terracotta", "Cream", "Ink"],
@@ -59,8 +55,6 @@ export const products: Product[] = [
       "Line-art legends in midnight navy. Built for sports biographies and late-night readers.",
     price: 70,
     mrp: 90,
-    rating: 4.8,
-    reviews: 132,
     category: "Sports",
     designs: ["Navy", "Cream"],
     image: sports,
@@ -74,8 +68,6 @@ export const products: Product[] = [
       "A vintage set in forest green and mustard for people who binge books like seasons.",
     price: 70,
     mrp: 90,
-    rating: 4.7,
-    reviews: 98,
     category: "TV Shows",
     bestseller: true,
     designs: ["Forest", "Mustard"],
@@ -90,8 +82,6 @@ export const products: Product[] = [
       "Charcoal and gold foil-look film reel. The most cinematic way to say 'pause here'.",
     price: 80,
     mrp: 100,
-    rating: 4.9,
-    reviews: 176,
     category: "Movies",
     bestseller: true,
     designs: ["Charcoal", "Gold"],
@@ -106,8 +96,6 @@ export const products: Product[] = [
       "Soft watercolour mountains in sage and dusty blue. Calm, slow, and very screenshot-able.",
     price: 70,
     mrp: 90,
-    rating: 4.8,
-    reviews: 143,
     category: "Scenery",
     designs: ["Sage", "Dusty Blue"],
     image: scenery,
@@ -118,11 +106,9 @@ export const products: Product[] = [
     name: "Just One More Chapter",
     tagline: "For people who dog-ear books emotionally, not physically",
     description:
-      "Burgundy, books and a cup of something warm. Our most gifted design, hands down.",
+      "Burgundy, books and a cup of something warm. Made for reading time and thoughtful gifts.",
     price: 60,
     mrp: 80,
-    rating: 5,
-    reviews: 289,
     category: "Book Lover",
     bestseller: true,
     designs: ["Burgundy", "Cream"],
