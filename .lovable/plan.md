@@ -1,7 +1,7 @@
 # Make the store demonstration-ready
 
 ## Changes
-- Remove unsupported popularity, rating, sales, customer-count, bestseller, gifting, dispatch, tracking, and return claims throughout the site.
+- Remove unsupported popularity, rating, sales, customer-count, tracking, and return claims throughout the site.
 - Keep only clearly demonstrable product details, prices, cart calculations, and the Google Form order handoff.
 - Clarify checkout as an order request rather than live payment, while retaining payment preference choices.
 - Add a simple checkout progress indicator and clearer confirmation instructions so the full buying journey is easy to present.
