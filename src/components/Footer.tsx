@@ -59,7 +59,7 @@ export function Footer() {
             </li>
             <li>
               <Link to="/shipping" className="hover:text-foreground">
-                Shipping &amp; Returns
+                Shipping information
               </Link>
             </li>
             <li>

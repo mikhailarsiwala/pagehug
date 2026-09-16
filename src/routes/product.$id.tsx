@@ -157,7 +157,7 @@ function ProductPage() {
           </div>
 
           <p className="flex items-center gap-2 text-sm text-muted-foreground">
-            <Truck size={16} /> Free shipping over ₹499 · Delivered in 2–7 days across India
+            <Truck size={16} /> Free shipping over ₹499 · Dispatched after order confirmation
           </p>
 
           <dl className="card-soft divide-y divide-border p-6 text-sm">

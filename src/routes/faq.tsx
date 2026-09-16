@@ -25,29 +25,25 @@ const FAQS = [
   },
   {
     q: "How long does delivery take?",
-    a: "Metro cities usually 2–4 working days, rest of India 4–7. You'll get tracking by email and SMS.",
+    a: "Orders are dispatched after confirmation. Delivery timing depends on the destination and courier availability.",
   },
   {
     q: "Can I gift them?",
-    a: "Absolutely — that's most of our orders. Add a free handwritten note at checkout in the order notes.",
-  },
-  {
-    q: "What is your return policy?",
-    a: "Unused bookmarks can be returned within 7 days of delivery. Damaged in transit? Message us with a photo and we'll replace it, no fuss.",
+    a: "Yes. Singles and bundles can be ordered as gifts, and the recipient's address can be entered at checkout.",
   },
 ];
 
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "FAQ — Magnetic Bookmarks, Shipping & Returns | Pagehug" },
+      { title: "FAQ — Magnetic Bookmarks & Shipping | Pagehug" },
       {
         name: "description",
         content:
-          "Answers on magnet strength, materials, India-wide shipping, delivery times, gifting and returns.",
+          "Answers on magnet strength, materials, India-wide shipping, delivery times and gifting.",
       },
       { property: "og:title", content: "FAQ — Pagehug" },
-      { property: "og:description", content: "Everything about magnets, shipping and returns." },
+      { property: "og:description", content: "Everything about magnets, shipping and gifting." },
     ],
   }),
   component: Faq,
