@@ -5,7 +5,7 @@
 - Display the logo as **MarkMyPlace** with the initials **MMP** capitalized.
 - Update the social handle and contact email to neutral MarkMyPlace placeholders.
 - Rename saved cart, wishlist, and review browser keys while retaining existing saved data.
-- Keep all current product artwork; do not add unlicensed show, character, or celebrity images.
+- Keep existing celebrity, athlete, TV-show, and movie-themed product images unchanged during the rename.
 
 ## Verification
 - Check that no visible Pagehug references remain.

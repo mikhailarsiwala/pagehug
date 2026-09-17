@@ -3,3 +3,4 @@
 - [ ] Keep bestseller, gifting, and dispatch details.
 - [ ] Make the cart-to-Google-Form buying demonstration clear and reliable.
 - [ ] Verify the complete buying journey on mobile and desktop.
+- [ ] Rename the store to MarkMyPlace and preserve existing themed product imagery.
