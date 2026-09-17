@@ -4,12 +4,12 @@ import { BundleGrid } from "@/components/BundleGrid";
 export const Route = createFileRoute("/bundles")({
   head: () => ({
     meta: [
-      { title: "Bookmark Bundles & Gift Sets — Pagehug" },
+      { title: "Bookmark Bundles & Gift Sets — MarkMyPlace" },
       {
         name: "description",
         content: "Save on sets of 3 and 5 magnetic bookmarks. Gift-ready sleeves, shipped India-wide.",
       },
-      { property: "og:title", content: "More Books. More Bookmarks. — Pagehug" },
+      { property: "og:title", content: "More Books. More Bookmarks. — MarkMyPlace" },
       { property: "og:description", content: "Bundle up and save on gift-ready bookmark sets." },
     ],
   }),

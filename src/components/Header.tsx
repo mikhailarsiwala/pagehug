@@ -47,7 +47,7 @@ export function Header() {
         </div>
 
         <Link to="/" className="font-display text-xl tracking-tight">
-          Pagehug<span className="text-primary">.</span>
+          MarkMyPlace<span className="text-primary">.</span>
         </Link>
 
         <nav className="hidden items-center gap-8 text-sm lg:flex">

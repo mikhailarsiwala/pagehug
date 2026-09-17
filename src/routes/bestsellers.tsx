@@ -5,12 +5,12 @@ import { products } from "@/lib/products";
 export const Route = createFileRoute("/bestsellers")({
   head: () => ({
     meta: [
-      { title: "Bestselling Magnetic Bookmarks — Pagehug" },
+      { title: "Bestselling Magnetic Bookmarks — MarkMyPlace" },
       {
         name: "description",
-        content: "A featured collection of Pagehug magnetic bookmark designs, starting at ₹60.",
+        content: "A featured collection of MarkMyPlace magnetic bookmark designs, starting at ₹60.",
       },
-      { property: "og:title", content: "Bestsellers — Pagehug" },
+      { property: "og:title", content: "Bestsellers — MarkMyPlace" },
       { property: "og:description", content: "A featured collection of magnetic bookmark designs." },
     ],
   }),
@@ -25,7 +25,7 @@ function Bestsellers() {
         <p className="eyebrow">Bestsellers</p>
         <h1 className="text-4xl sm:text-5xl">Featured favourites.</h1>
         <p className="text-muted-foreground">
-          A handpicked set of Pagehug designs, ready for your next chapter.
+          A handpicked set of MarkMyPlace designs, ready for your next chapter.
         </p>
       </div>
       <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

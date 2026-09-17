@@ -14,13 +14,13 @@ import { products } from "@/lib/products";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Pagehug — Magnetic Bookmarks That Never Fall Out" },
+      { title: "MarkMyPlace — Magnetic Bookmarks That Never Fall Out" },
       {
         name: "description",
         content:
           "Premium magnetic bookmarks from ₹60. Strong magnets, premium finish, made for everyday reading. Free shipping across India over ₹499.",
       },
-      { property: "og:title", content: "Pagehug — Never Lose Your Page Again" },
+      { property: "og:title", content: "MarkMyPlace — Never Lose Your Page Again" },
       {
         property: "og:description",
         content: "Magnetic bookmarks designed to stay put, look good, and make reading better.",
@@ -155,7 +155,7 @@ function Home() {
       {/* Social */}
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
         <div className="max-w-xl space-y-3">
-          <p className="eyebrow">@pagehug</p>
+          <p className="eyebrow">@markmyplace</p>
           <h2 className="text-4xl sm:text-5xl">Made for Your Bookshelf.</h2>
         </div>
         <div className="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-4">
