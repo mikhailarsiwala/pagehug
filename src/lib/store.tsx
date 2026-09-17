@@ -5,6 +5,7 @@ import {
   useMemo,
   useState,
   type ReactNode,
+  type Context,
 } from "react";
 
 export type CartItem = {
