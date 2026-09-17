@@ -36,7 +36,7 @@ type StoreValue = {
 // Reuse a single context instance even if this module is evaluated twice
 // (dev HMR / duplicate module graphs), which otherwise breaks the provider link.
 const g = globalThis as typeof globalThis & {
-  __markmyplaceStoreContext?: React.Context<StoreValue | null>;
+  __markmyplaceStoreContext?: Context<StoreValue | null>;
 };
 const StoreContext =
   g.__markmyplaceStoreContext ??
