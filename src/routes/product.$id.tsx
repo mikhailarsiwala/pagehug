@@ -15,14 +15,14 @@ export const Route = createFileRoute("/product/$id")({
   },
   head: ({ loaderData }) => {
     if (!loaderData) {
-      return { meta: [{ title: "Unavailable — Pagehug" }, { name: "robots", content: "noindex" }] };
+      return { meta: [{ title: "Unavailable — MarkMyPlace" }, { name: "robots", content: "noindex" }] };
     }
     const p = loaderData.product;
     return {
       meta: [
-        { title: `${p.name} Magnetic Bookmark — Pagehug` },
+        { title: `${p.name} Magnetic Bookmark — MarkMyPlace` },
         { name: "description", content: `${p.tagline}. ${p.description}` },
-        { property: "og:title", content: `${p.name} — Pagehug` },
+        { property: "og:title", content: `${p.name} — MarkMyPlace` },
         { property: "og:description", content: p.tagline },
       ],
     };

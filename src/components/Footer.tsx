@@ -7,7 +7,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:grid-cols-2 lg:grid-cols-4 lg:px-8">
         <div className="space-y-3">
           <p className="font-display text-xl">
-            Pagehug<span className="text-primary">.</span>
+            MarkMyPlace<span className="text-primary">.</span>
           </p>
           <p className="max-w-xs text-sm text-muted-foreground">
             Magnetic bookmarks made in India for people who dog-ear books emotionally, not
@@ -17,7 +17,7 @@ export function Footer() {
             <a href="https://instagram.com" aria-label="Instagram" className="hover:text-primary">
               <Instagram size={18} />
             </a>
-            <a href="mailto:hello@pagehug.in" aria-label="Email" className="hover:text-primary">
+            <a href="mailto:hello@markmyplace.in" aria-label="Email" className="hover:text-primary">
               <Mail size={18} />
             </a>
           </div>
@@ -68,8 +68,8 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <a href="mailto:hello@pagehug.in" className="hover:text-foreground">
-                hello@pagehug.in
+              <a href="mailto:hello@markmyplace.in" className="hover:text-foreground">
+                hello@markmyplace.in
               </a>
             </li>
           </ul>
@@ -92,7 +92,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-border px-5 py-6 text-center text-xs text-muted-foreground lg:px-8">
-        © {new Date().getFullYear()} Pagehug. Bookmark your main character moment.
+        © {new Date().getFullYear()} MarkMyPlace. Bookmark your main character moment.
       </div>
     </footer>
   );

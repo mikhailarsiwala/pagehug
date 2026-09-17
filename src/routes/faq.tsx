@@ -36,13 +36,13 @@ const FAQS = [
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "FAQ — Magnetic Bookmarks & Shipping | Pagehug" },
+      { title: "FAQ — Magnetic Bookmarks & Shipping | MarkMyPlace" },
       {
         name: "description",
         content:
           "Answers on magnet strength, materials, India-wide shipping, delivery times and gifting.",
       },
-      { property: "og:title", content: "FAQ — Pagehug" },
+      { property: "og:title", content: "FAQ — MarkMyPlace" },
       { property: "og:description", content: "Everything about magnets, shipping and gifting." },
     ],
   }),

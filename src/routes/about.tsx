@@ -5,13 +5,13 @@ import { HowItWorks } from "@/components/HowItWorks";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "Our Story — Pagehug Magnetic Bookmarks" },
+      { title: "Our Story — MarkMyPlace Magnetic Bookmarks" },
       {
         name: "description",
         content:
-          "Pagehug makes magnetic bookmarks in India for readers who love their books too much to fold them.",
+          "MarkMyPlace makes magnetic bookmarks in India for readers who love their books too much to fold them.",
       },
-      { property: "og:title", content: "Our Story — Pagehug" },
+      { property: "og:title", content: "Our Story — MarkMyPlace" },
       { property: "og:description", content: "Small studio, strong magnets, a lot of books." },
     ],
   }),
@@ -26,7 +26,7 @@ function About() {
           <p className="eyebrow">Our story</p>
           <h1 className="text-4xl sm:text-5xl">For people who dog-ear books emotionally.</h1>
           <p className="text-muted-foreground">
-            Pagehug started in a very small room with a very tall to-be-read pile. We were tired of
+            MarkMyPlace started in a very small room with a very tall to-be-read pile. We were tired of
             paper bookmarks sliding out and tired of folding corners we'd later regret.
           </p>
           <p className="text-muted-foreground">

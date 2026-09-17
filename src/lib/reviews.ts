@@ -10,7 +10,8 @@ export type Review = {
   date: string;
 };
 
-const KEY = "pagehug.reviews";
+const KEY = "markmyplace.reviews";
+const LEGACY_KEY = "pagehug.reviews";
 
 let cache: Review[] = [];
 let loaded = false;
@@ -18,7 +19,7 @@ const listeners = new Set<() => void>();
 
 function read(): Review[] {
   try {
-    const raw = localStorage.getItem(KEY);
+    const raw = localStorage.getItem(KEY) ?? localStorage.getItem(LEGACY_KEY);
     return raw ? (JSON.parse(raw) as Review[]) : [];
   } catch {
     return [];

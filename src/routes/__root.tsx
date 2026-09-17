@@ -73,7 +73,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Pagehug — Magnetic Bookmarks" },
+      { title: "MarkMyPlace — Magnetic Bookmarks" },
       {
         name: "description",
         content: "Premium magnetic bookmarks that stay put. Designed in India for book lovers.",

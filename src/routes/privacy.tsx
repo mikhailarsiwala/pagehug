@@ -3,9 +3,9 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
-      { title: "Privacy Policy — Pagehug" },
-      { name: "description", content: "How Pagehug collects, uses and protects your information." },
-      { property: "og:title", content: "Privacy Policy — Pagehug" },
+      { title: "Privacy Policy — MarkMyPlace" },
+      { name: "description", content: "How MarkMyPlace collects, uses and protects your information." },
+      { property: "og:title", content: "Privacy Policy — MarkMyPlace" },
       { property: "og:description", content: "How we handle your information." },
     ],
   }),
@@ -26,7 +26,7 @@ function Privacy() {
       </p>
       <h2 className="text-2xl">Your choices</h2>
       <p className="text-muted-foreground">
-        Write to hello@pagehug.in any time to access, correct or delete your information, or to
+        Write to hello@markmyplace.in any time to access, correct or delete your information, or to
         unsubscribe from emails.
       </p>
     </article>

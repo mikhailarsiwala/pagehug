@@ -14,13 +14,13 @@ export const Route = createFileRoute("/shop")({
   }),
   head: () => ({
     meta: [
-      { title: "Shop Magnetic Bookmarks — Pagehug" },
+      { title: "Shop Magnetic Bookmarks — MarkMyPlace" },
       {
         name: "description",
         content:
-          "Browse every Pagehug magnetic bookmark design from ₹60 — motivational, sports, movies, scenery and book lover.",
+          "Browse every MarkMyPlace magnetic bookmark design from ₹60 — motivational, sports, movies, scenery and book lover.",
       },
-      { property: "og:title", content: "Shop Magnetic Bookmarks — Pagehug" },
+      { property: "og:title", content: "Shop Magnetic Bookmarks — MarkMyPlace" },
       {
         property: "og:description",
         content: "Every design, from ₹60. Strong magnets, premium finish.",

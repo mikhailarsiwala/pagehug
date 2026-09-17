@@ -6,9 +6,9 @@ import { cartKey, useStore } from "@/lib/store";
 export const Route = createFileRoute("/cart")({
   head: () => ({
     meta: [
-      { title: "Your Bag — Pagehug" },
+      { title: "Your Bag — MarkMyPlace" },
       { name: "description", content: "Review your magnetic bookmarks before checkout." },
-      { property: "og:title", content: "Your Bag — Pagehug" },
+      { property: "og:title", content: "Your Bag — MarkMyPlace" },
       { property: "og:description", content: "Review your magnetic bookmarks before checkout." },
     ],
   }),

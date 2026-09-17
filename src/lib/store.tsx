@@ -36,19 +36,19 @@ const StoreContext = createContext<StoreValue | null>(null);
 
 const keyOf = (i: { id: string; variant?: string | undefined }) => `${i.id}__${i.variant ?? ""}`;
 
-function usePersisted<T>(key: string, initial: T) {
+function usePersisted<T>(key: string, legacyKey: string, initial: T) {
   const [value, setValue] = useState<T>(initial);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     try {
-      const raw = localStorage.getItem(key);
+      const raw = localStorage.getItem(key) ?? localStorage.getItem(legacyKey);
       if (raw) setValue(JSON.parse(raw) as T);
     } catch {
       /* ignore */
     }
     setLoaded(true);
-  }, [key]);
+  }, [key, legacyKey]);
 
   useEffect(() => {
     if (!loaded) return;
@@ -63,8 +63,16 @@ function usePersisted<T>(key: string, initial: T) {
 }
 
 export function StoreProvider({ children }: { children: ReactNode }) {
-  const [items, setItems] = usePersisted<CartItem[]>("pagehug.cart", []);
-  const [wishlist, setWishlist] = usePersisted<string[]>("pagehug.wishlist", []);
+  const [items, setItems] = usePersisted<CartItem[]>(
+    "markmyplace.cart",
+    "pagehug.cart",
+    [],
+  );
+  const [wishlist, setWishlist] = usePersisted<string[]>(
+    "markmyplace.wishlist",
+    "pagehug.wishlist",
+    [],
+  );
   const [cartOpen, setCartOpen] = useState(false);
 
   const value = useMemo<StoreValue>(() => {

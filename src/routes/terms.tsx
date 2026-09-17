@@ -3,9 +3,9 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/terms")({
   head: () => ({
     meta: [
-      { title: "Terms of Service — Pagehug" },
-      { name: "description", content: "The terms that apply when you shop with Pagehug." },
-      { property: "og:title", content: "Terms of Service — Pagehug" },
+      { title: "Terms of Service — MarkMyPlace" },
+      { name: "description", content: "The terms that apply when you shop with MarkMyPlace." },
+      { property: "og:title", content: "Terms of Service — MarkMyPlace" },
       { property: "og:description", content: "The terms that apply when you shop with us." },
     ],
   }),
@@ -17,7 +17,7 @@ function Terms() {
     <article className="mx-auto max-w-2xl space-y-6 px-5 py-16">
       <h1 className="text-4xl">Terms of Service</h1>
       <p className="text-muted-foreground">
-        By placing an order with Pagehug you agree to these terms. Prices are in Indian Rupees and
+        By placing an order with MarkMyPlace you agree to these terms. Prices are in Indian Rupees and
         include applicable taxes.
       </p>
       <h2 className="text-2xl">Orders</h2>

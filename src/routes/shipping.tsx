@@ -3,12 +3,12 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/shipping")({
   head: () => ({
     meta: [
-      { title: "Shipping Information — Pagehug" },
+      { title: "Shipping Information — MarkMyPlace" },
       {
         name: "description",
-        content: "Pagehug order dispatch and India-wide shipping information.",
+        content: "MarkMyPlace order dispatch and India-wide shipping information.",
       },
-      { property: "og:title", content: "Shipping Information — Pagehug" },
+      { property: "og:title", content: "Shipping Information — MarkMyPlace" },
       { property: "og:description", content: "Order dispatch and India-wide shipping information." },
     ],
   }),
