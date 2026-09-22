@@ -7,6 +7,10 @@ import booklover from "@/assets/p-booklover.jpg";
 import bundleImg from "@/assets/bundle.jpg";
 import life1 from "@/assets/life-1.jpg";
 import life4 from "@/assets/life-4.jpg";
+import breakingbad from "@/assets/p-breakingbad.jpg";
+import messi from "@/assets/p-messi.jpg";
+import bojack from "@/assets/p-bojack.jpg";
+import starrypines from "@/assets/p-starrypines.jpg";
 
 export type Product = {
   id: string;
@@ -114,6 +118,60 @@ export const products: Product[] = [
     designs: ["Burgundy", "Cream"],
     image: booklover,
     gallery: [booklover, life1, life4],
+  },
+  {
+    id: "i-am-the-danger",
+    name: "I Am The Danger",
+    tagline: "For the reader who knocks",
+    description:
+      "High-contrast ink portrait in black and white. Bold, graphic, and impossible to lose between pages.",
+    price: 80,
+    mrp: 100,
+    category: "TV Shows",
+    bestseller: true,
+    designs: ["Black & White"],
+    image: breakingbad,
+    gallery: [breakingbad, life1, life4],
+  },
+  {
+    id: "leo-messi",
+    name: "Leo Messi",
+    tagline: "Ten out of ten on every page",
+    description:
+      "Comic-style halftone portrait in blue and red. Made for football fans who read between matches.",
+    price: 80,
+    mrp: 100,
+    category: "Sports",
+    bestseller: true,
+    designs: ["Blue & Red"],
+    image: messi,
+    gallery: [messi, life4, life1],
+  },
+  {
+    id: "bojack-horseman",
+    name: "BoJack Horseman",
+    tagline: "Back in the nineties, he was in a very famous book",
+    description:
+      "Midnight purple night sky illustration. Wry, warm, and a little melancholy — like your favourite chapter.",
+    price: 80,
+    mrp: 100,
+    category: "TV Shows",
+    designs: ["Midnight Purple"],
+    image: bojack,
+    gallery: [bojack, life1, life4],
+  },
+  {
+    id: "starry-pines",
+    name: "Starry Pines",
+    tagline: "A quiet night tucked into your book",
+    description:
+      "Hand-painted watercolour pines under a starry blue sky. Calm, dreamy, and perfect for slow reading.",
+    price: 70,
+    mrp: 90,
+    category: "Scenery",
+    designs: ["Night Blue"],
+    image: starrypines,
+    gallery: [starrypines, life1, life4],
   },
 ];
 
