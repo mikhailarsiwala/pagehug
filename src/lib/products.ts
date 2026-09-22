@@ -11,6 +11,9 @@ import breakingbad from "@/assets/p-breakingbad.jpg";
 import messi from "@/assets/p-messi.jpg";
 import bojack from "@/assets/p-bojack.jpg";
 import starrypines from "@/assets/p-starrypines.jpg";
+import viratKohliAsset from "@/assets/p-virat-kohli.jpg.asset.json";
+import batmanAsset from "@/assets/p-batman.jpg.asset.json";
+import spiderManAsset from "@/assets/p-spider-man.jpg.asset.json";
 
 export type Product = {
   id: string;
@@ -52,19 +55,6 @@ export const products: Product[] = [
     gallery: [motivational, life4, life1],
   },
   {
-    id: "match-day",
-    name: "Match Day",
-    tagline: "Cricket, football, and one more chapter",
-    description:
-      "Line-art legends in midnight navy. Built for sports biographies and late-night readers.",
-    price: 70,
-    mrp: 90,
-    category: "Sports",
-    designs: ["Navy", "Cream"],
-    image: sports,
-    gallery: [sports, life4, life1],
-  },
-  {
     id: "tune-in-read-on",
     name: "Tune In, Read On",
     tagline: "Retro telly energy, zero buffering",
@@ -91,19 +81,6 @@ export const products: Product[] = [
     designs: ["Charcoal", "Gold"],
     image: movies,
     gallery: [movies, life4, life1],
-  },
-  {
-    id: "quiet-hills",
-    name: "Quiet Hills",
-    tagline: "A little window between the pages",
-    description:
-      "Soft watercolour mountains in sage and dusty blue. Calm, slow, and very screenshot-able.",
-    price: 70,
-    mrp: 90,
-    category: "Scenery",
-    designs: ["Sage", "Dusty Blue"],
-    image: scenery,
-    gallery: [scenery, life1, life4],
   },
   {
     id: "one-more-chapter",
@@ -172,6 +149,72 @@ export const products: Product[] = [
     designs: ["Night Blue"],
     image: starrypines,
     gallery: [starrypines, life1, life4],
+  },
+  {
+    id: "virat-kohli",
+    name: "Virat Kohli",
+    tagline: "King energy for every chapter",
+    description:
+      "A vibrant illustrated portrait in bold red and blue. Made for cricket fans who never stop chasing the next chapter.",
+    price: 80,
+    mrp: 100,
+    category: "Sports",
+    bestseller: true,
+    designs: ["Red & Blue"],
+    image: viratKohliAsset.url,
+    gallery: [viratKohliAsset.url, life4, life1],
+  },
+  {
+    id: "batman",
+    name: "Batman",
+    tagline: "A dark knight for late-night reading",
+    description:
+      "Minimal black bookmark with a bold yellow bat emblem. Clean, striking, and ready to guard your page.",
+    price: 80,
+    mrp: 100,
+    category: "Movies",
+    designs: ["Black & Yellow"],
+    image: batmanAsset.url,
+    gallery: [batmanAsset.url, life1, life4],
+  },
+  {
+    id: "spider-man",
+    name: "Spider-Man",
+    tagline: "Your friendly neighbourhood page saver",
+    description:
+      "Hand-drawn red web design with the iconic mask. Bright, playful, and impossible to miss between pages.",
+    price: 80,
+    mrp: 100,
+    category: "Movies",
+    designs: ["Web Red"],
+    image: spiderManAsset.url,
+    gallery: [spiderManAsset.url, life4, life1],
+  },
+  {
+    id: "quiet-hills",
+    name: "Quiet Hills",
+    tagline: "A little window between the pages",
+    description:
+      "Soft watercolour mountains in sage and dusty blue. Calm, slow, and very screenshot-able.",
+    price: 70,
+    mrp: 90,
+    category: "Scenery",
+    designs: ["Sage", "Dusty Blue"],
+    image: scenery,
+    gallery: [scenery, life1, life4],
+  },
+  {
+    id: "match-day",
+    name: "Match Day",
+    tagline: "Cricket, football, and one more chapter",
+    description:
+      "Line-art legends in midnight navy. Built for sports biographies and late-night readers.",
+    price: 70,
+    mrp: 90,
+    category: "Sports",
+    designs: ["Navy", "Cream"],
+    image: sports,
+    gallery: [sports, life4, life1],
   },
 ];
 
