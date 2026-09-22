@@ -7,6 +7,10 @@ import booklover from "@/assets/p-booklover.jpg";
 import bundleImg from "@/assets/bundle.jpg";
 import life1 from "@/assets/life-1.jpg";
 import life4 from "@/assets/life-4.jpg";
+import breakingbad from "@/assets/p-breakingbad.jpg";
+import messi from "@/assets/p-messi.jpg";
+import bojack from "@/assets/p-bojack.jpg";
+import starrypines from "@/assets/p-starrypines.jpg";
 
 export type Product = {
   id: string;
