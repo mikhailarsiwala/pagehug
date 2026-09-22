@@ -20,7 +20,7 @@ export const Route = createFileRoute("/checkout")({
   component: Checkout,
 });
 
-const PAYMENTS = ["UPI", "Credit / Debit Card", "Net Banking", "Wallets"];
+const PAYMENTS = ["UPI", "Cash on delivery", "Wallets"];
 
 const FIELDS = [
   { name: "name", label: "Full name", type: "text", span: 2 },
